@@ -2,27 +2,24 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [Smart LPG Level Indicator] 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [CaffieneCompile]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-
-### Hosted Project Link
-[mention your project hosted link here]
+- Member 1: [Alba Asha] - [College of Engineering Perumon]
+- Member 2: [Fathima Rasheed] - [College of Engineering Perumon]
 
 ### Project Description
-[2-3 lines about what your project does]
+[The **Smart LPG Level Indicator** monitors LPG cylinder levels in real-time using an **ESP32** and **ultrasonic sensor**. It provides alerts via LEDs and a buzzer when the gas is low, ensuring timely refills and improved safety. The design includes a compact PCB for easy installation.]
 
 ### The Problem statement
-[What problem are you solving?]
+[Many households face unexpected LPG shortages, leading to inconvenience. Manual checking is unreliable and unsafe. There is a need for an automated system to monitor LPG levels and alert users when the gas is low.]
 
 ### The Solution
-[How are you solving it?]
+[The **Smart LPG Level Indicator** offers an automated, real-time solution using an ESP32 and ultrasonic sensor. Users receive LED and buzzer alerts for low gas levels, preventing shortages and enhancing safety.]
 
 ---
 
@@ -31,80 +28,49 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [C++]
+- Libraries used: [WiFi.h, WebServer.h, ArduinoJson, EEPROM.h]
+- Tools used: [Arduino IDE]
 
 **For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+- Main components: [ESP32 WROOM, HC-SR04 ultrasonic sensor, LEDs, buzzer, resistors, wires, power supply]
+- Specifications: [ESP32: 3.3V logic, 240 MHz, WiFi & Bluetooth
+                   HC-SR04: 5V operating voltage, distance 2–400 cm, accuracy ±3mm
+                   LEDs: 5mm, 2–3V, 220Ω resistors
+                   Buzzer: 5V active/passive]
+- Tools required: [breadboard, jumper wire]
 
 ---
 
 ## Features
 
-List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Real-time LPG level monitoring  
+- LED and buzzer alerts  
+- Compact PCB design for easy installation  
+- Color-coded wiring for simple assembly
 
 ---
 
 ## Implementation
 
-### For Software:
-
-#### Installation
-```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
-```
-
-#### Run
-```bash
-[Run commands - e.g., npm start, python app.py]
-```
+We used water to mimic LPG gas for the ease of building the demo.
 
 ### For Hardware:
 
 #### Components Required
-[List all components needed with specifications]
+[**Main components:** ESP32 WROOM, HC-SR04 ultrasonic sensor, LEDs, buzzer, resistors, jumper wires, power supply  
+- **Specifications:**  
+  - ESP32: 3.3V logic, 240 MHz, WiFi & Bluetooth  
+  - HC-SR04: 5V, 2–400 cm range, ±3mm accuracy  
+  - LEDs: 5mm, 2–3V with 220Ω resistors  
+  - Buzzer: 5V active/passive  ]
 
 #### Circuit Setup
 [Explain how to set up the circuit]
 
 ---
 
-## Project Documentation
-
-### For Software:
-
-#### Screenshots (Add at least 3)
-
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-#### Diagrams
-
-**System Architecture:**
-
-![Architecture Diagram](docs/architecture.png)
-*Explain your system architecture - components, data flow, tech stack interaction*
-
-**Application Workflow:**
-
-![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
-
----
+## Project Documentation00
 
 ### For Hardware:
 
