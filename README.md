@@ -66,7 +66,37 @@ We used water to mimic LPG gas for the ease of building the demo.
   - Buzzer: 5V active/passive  ]
 
 #### Circuit Setup
-[Explain how to set up the circuit]
+
+**Power Supply (Using Arduino Uno)**
+1. Connect the 5V pin of the Arduino Uno to the positive rail of the breadboard.
+2. Connect the GND pin of the Arduino Uno to the negative rail.
+3. Ensure the ESP32 and all components share the same ground.
+
+**ESP32 Power Connection**
+1. Connect ESP32 VIN (or 5V pin) to the positive breadboard rail.
+2. Connect ESP32 GND to the negative breadboard rail.
+3. This powers the ESP32 from the Uno.
+
+**Ultrasonic Sensor Connections**
+1. VCC → Breadboard 5V rail
+2. GND → GND rail
+3. TRIG → ESP32 GPIO 5
+4. ECHO → ESP32 GPIO 18
+
+**LED Connections**
+1. Each LED must have a 220Ω resistor in series.
+2. LED anodes → ESP32 GPIO pins 19 21 22 for red yellow green respectively
+3. LED cathodes → GND rail
+
+**Buzzer Connection**
+1. Buzzer Positive (+) → ESP32 GPIO 23
+2. Buzzer Negative (-) → GND
+
+**Final Check**
+1. All grounds connected together
+2. Pins match the program
+3. No loose wiring
+4. Upload code and test using Serial Monitor
 
 ---
 
@@ -118,23 +148,17 @@ We used water to mimic LPG gas for the ease of building the demo.
 1. Gather all components listed in the BOM.
 2. Verify specifications (voltage ratings, resistor values, etc.).
 3. Arrange components neatly on your workspace.
-![Step 1](images/assembly-step1.jpg)
-*Caption: All components laid out*
 
 **Step 2: Build the Power Supply**
 1. Connect the power rails on the breadboard
 2. Connect Arduino 5V to breadboard positive rail
 3. Connect Arduino GND to breadboard negative rail
-![Step 2](images/assembly-step2.jpg)
-*Caption: Power connections completed*
 
 **Step 3: Connect Ultrasonic Sensor (HC-SR04)**
 1. VCC → 5V rail
 2. GND → GND rail
 3. TRIG → ESP32 GPIO 5
 4. ECHO → ESP32 GPIO 18
-![Step 3](images/assembly-step3.jpg)
-*Caption: LED circuit assembled*
 
 **Step 4: Connect LEDs**
 1. Red LED
@@ -204,12 +228,7 @@ Distance: 4.82 cm
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
-
-*Explain what the video demonstrates - key features, user flow, technical highlights*
-
-### Additional Demos
-[Add any extra demo materials/links - Live site, APK download, online demo, etc.]
+https://drive.google.com/file/d/1SrRyCpWh56bCBSET-vFnoK8EwF1ooADb/view?usp=sharing
 
 ---
 
