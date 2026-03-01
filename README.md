@@ -70,7 +70,7 @@ We used water to mimic LPG gas for the ease of building the demo.
 
 ---
 
-## Project Documentation00
+## Project Documentation
 
 ### For Hardware:
 
@@ -99,109 +99,31 @@ We used water to mimic LPG gas for the ease of building the demo.
 
 ## Additional Documentation
 
-### For Web Projects with Backend:
-
-#### API Documentation
-
-**Base URL:** `https://api.yourproject.com`
-
-##### Endpoints
-
-**GET /api/endpoint**
-- **Description:** [What it does]
-- **Parameters:**
-  - `param1` (string): [Description]
-  - `param2` (integer): [Description]
-- **Response:**
-```json
-{
-  "status": "success",
-  "data": {}
-}
-```
-
-**POST /api/endpoint**
-- **Description:** [What it does]
-- **Request Body:**
-```json
-{
-  "field1": "value1",
-  "field2": "value2"
-}
-```
-- **Response:**
-```json
-{
-  "status": "success",
-  "message": "Operation completed"
-}
-```
-
-[Add more endpoints as needed...]
-
----
-
-### For Mobile Apps:
-
-#### App Flow Diagram
-
-![App Flow](docs/app-flow.png)
-*Explain the user flow through your application*
-
-#### Installation Guide
-
-**For Android (APK):**
-1. Download the APK from [Release Link]
-2. Enable "Install from Unknown Sources" in your device settings:
-   - Go to Settings > Security
-   - Enable "Unknown Sources"
-3. Open the downloaded APK file
-4. Follow the installation prompts
-5. Open the app and enjoy!
-
-**For iOS (IPA) - TestFlight:**
-1. Download TestFlight from the App Store
-2. Open this TestFlight link: [Your TestFlight Link]
-3. Click "Install" or "Accept"
-4. Wait for the app to install
-5. Open the app from your home screen
-
-**Building from Source:**
-```bash
-# For Android
-flutter build apk
-# or
-./gradlew assembleDebug
-
-# For iOS
-flutter build ios
-# or
-xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
-```
-
 ---
 
 ### For Hardware Projects:
 
 #### Bill of Materials (BOM)
 
-| Component | Quantity | Specifications | Price | Link/Source |
-|-----------|----------|----------------|-------|-------------|
-| Arduino Uno | 1 | ATmega328P, 16MHz | ₹450 | [Link] |
-| LED | 5 | Red, 5mm, 20mA | ₹5 each | [Link] |
-| Resistor | 5 | 220Ω, 1/4W | ₹1 each | [Link] |
-| Breadboard | 1 | 830 points | ₹100 | [Link] |
-| Jumper Wires | 20 | Male-to-Male | ₹50 | [Link] |
-| [Add more...] | | | | |
+| Component                     | Quantity | Specifications                               | Price      |
+|------------------------------|----------|----------------------------------------------|------------|
+| ESP32 WROOM                 | 1        | 3.3V logic, WiFi + Bluetooth, 240MHz        | ₹370       |
+| Arduino Uno                 | 1        | ATmega328P, 16MHz, 5V logic                 | ₹450       |
+| HC-SR04 Ultrasonic Sensor   | 1        | 5V, 2–400 cm range, ±3mm accuracy           | ₹80        |
+| LED                         | 3        | Red/Green, 5mm, 20mA                        | ₹5 each    |
+| Resistor                    | 3        | 220Ω, 1/4W (for LEDs)                       | ₹10 each    |
+| Buzzer                      | 1        | 5V active/passive                           | ₹40        |
+| Breadboard                  | 1        | 830 points                                  | ₹120       |
+| Jumper Wires                | 15–20    | Male-to-Male / Male-to-Female               | ₹100       |
 
-**Total Estimated Cost:** ₹[Amount]
+**Total Estimated Cost:** ₹1,205
 
 #### Assembly Instructions
 
 **Step 1: Prepare Components**
-1. Gather all components listed in the BOM
-2. Check component specifications
-3. Prepare your workspace
+1. Gather all components listed in the BOM.
+2. Verify specifications (voltage ratings, resistor values, etc.).
+3. Arrange components neatly on your workspace.
 ![Step 1](images/assembly-step1.jpg)
 *Caption: All components laid out*
 
@@ -212,117 +134,52 @@ xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
 ![Step 2](images/assembly-step2.jpg)
 *Caption: Power connections completed*
 
-**Step 3: Add Components**
-1. Place LEDs on breadboard
-2. Connect resistors in series with LEDs
-3. Connect LED cathodes to GND
-4. Connect LED anodes to Arduino digital pins (2-6)
+**Step 3: Connect Ultrasonic Sensor (HC-SR04)**
+1. VCC → 5V rail
+2. GND → GND rail
+3. TRIG → ESP32 GPIO 5
+4. ECHO → ESP32 GPIO 18
 ![Step 3](images/assembly-step3.jpg)
 *Caption: LED circuit assembled*
 
-**Step 4: [Continue for all steps...]**
+**Step 4: Connect LEDs**
+1. Red LED
+  - Anode → GPIO 19 (through 220Ω resistor)
+  - Cathode → GND
+2. Yellow LED
+  - Anode → GPIO 21 (through 220Ω resistor)
+  - Cathode → GND
+3. Green LED
+  - Anode → GPIO 22 (through 220Ω resistor)
+  - Cathode → GND
 
-**Final Assembly:**
+**Step 5: Connect Buzzer**
+1. Positive terminal → GPIO 23
+2. Negative terminal → GND
+
+**Step 6: Upload Code**
+1. Connect ESP32 to computer via USB.
+2. Open Arduino IDE.
+3. Select ESP32 board.
+4. Upload code.
+5. Open Serial Monitor to check IP address.
+
+**Final Assembly**
+1. Place ultrasonic sensor facing the bottom of LPG cylinder.
+2. Secure connections.
+3. Connect WiFi.
+4. Open browser and enter ESP32 IP address to view LPG status.
+
 ![Final Build](images/final-build.jpg)
 *Caption: Completed project ready for testing*
 
 ---
 
-### For Scripts/CLI Tools:
 
-#### Command Reference
-
-**Basic Usage:**
-```bash
-python script.py [options] [arguments]
-```
-
-**Available Commands:**
-- `command1 [args]` - Description of what command1 does
-- `command2 [args]` - Description of what command2 does
-- `command3 [args]` - Description of what command3 does
-
-**Options:**
-- `-h, --help` - Show help message and exit
-- `-v, --verbose` - Enable verbose output
-- `-o, --output FILE` - Specify output file path
-- `-c, --config FILE` - Specify configuration file
-- `--version` - Show version information
-
-**Examples:**
-
-```bash
-# Example 1: Basic usage
-python script.py input.txt
-
-# Example 2: With verbose output
-python script.py -v input.txt
-
-# Example 3: Specify output file
-python script.py -o output.txt input.txt
-
-# Example 4: Using configuration
-python script.py -c config.json --verbose input.txt
-```
 
 #### Demo Output
 
-**Example 1: Basic Processing**
 
-**Input:**
-```
-This is a sample input file
-with multiple lines of text
-for demonstration purposes
-```
-
-**Command:**
-```bash
-python script.py sample.txt
-```
-
-**Output:**
-```
-Processing: sample.txt
-Lines processed: 3
-Characters counted: 86
-Status: Success
-Output saved to: output.txt
-```
-
-**Example 2: Advanced Usage**
-
-**Input:**
-```json
-{
-  "name": "test",
-  "value": 123
-}
-```
-
-**Command:**
-```bash
-python script.py -v --format json data.json
-```
-
-**Output:**
-```
-[VERBOSE] Loading configuration...
-[VERBOSE] Parsing JSON input...
-[VERBOSE] Processing data...
-{
-  "status": "success",
-  "processed": true,
-  "result": {
-    "name": "test",
-    "value": 123,
-    "timestamp": "2024-02-07T10:30:00"
-  }
-}
-[VERBOSE] Operation completed in 0.23s
-```
-
----
 
 ## Project Demo
 
@@ -340,27 +197,26 @@ python script.py -v --format json data.json
 
 If you used AI tools during development, document them here for transparency:
 
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
+**Tool Used:** [ ChatGPT ]
 
 **Purpose:** [What you used it for]
-- Example: "Generated boilerplate React components"
-- Example: "Debugging assistance for async functions"
-- Example: "Code review and optimization suggestions"
+- Placement of components
+- Circuit connection
+- Code
 
 **Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
+- How does ultrasonic sensor work?
+- Configure GPIO pin mapping for ESP32-WROOM-32
+- Implement LED and buzzer alert logic based on LPG level thresholds
+- Give the code needed to be used
 
 **Percentage of AI-generated code:** [Approximately X%]
 
 **Human Contributions:**
-- Architecture design and planning
-- Custom business logic implementation
-- Integration and testing
-- UI/UX design decisions
+- Modification of code
+- Idea for demo
+- Additions to the idea
 
-*Note: Proper documentation of AI usage demonstrates transparency and earns bonus points in evaluation!*
 
 ---
 
