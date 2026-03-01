@@ -72,8 +72,6 @@ We used water to mimic LPG gas for the ease of building the demo.
 
 ## Project Documentation
 
-### For Hardware:
-
 #### Schematic & Circuit
 
 ![Circuit](Add your circuit diagram here)
@@ -98,10 +96,6 @@ We used water to mimic LPG gas for the ease of building the demo.
 ---
 
 ## Additional Documentation
-
----
-
-### For Hardware Projects:
 
 #### Bill of Materials (BOM)
 
@@ -177,8 +171,34 @@ We used water to mimic LPG gas for the ease of building the demo.
 
 
 
-#### Demo Output
+## Demo Output
 
+**Serial Monitor Output**
+
+Input:
+System powered ON and connected to WiFi.
+
+Output (Serial Monitor):
+Connecting to WiFi...
+....
+WiFi Connected!
+IP Address: 192.168.1.45
+HTTP server started
+
+Distance: 4.82 cm | Status: HIGH
+Distance: 7.35 cm | Status: MEDIUM
+Distance: 10.12 cm | Status: LOW
+Distance: 13.40 cm | Status: EMPTY
+
+**Web Interface Output**
+
+Access:
+Open browser and enter ESP32 IP address
+
+Webpage Display:
+Smart LPG Cylinder Status
+Status: HIGH  
+Distance: 4.82 cm
 
 
 ## Project Demo
@@ -193,9 +213,7 @@ We used water to mimic LPG gas for the ease of building the demo.
 
 ---
 
-## AI Tools Used (Optional - For Transparency Bonus)
-
-If you used AI tools during development, document them here for transparency:
+## AI Tools Used 
 
 **Tool Used:** [ ChatGPT ]
 
@@ -210,8 +228,6 @@ If you used AI tools during development, document them here for transparency:
 - Implement LED and buzzer alert logic based on LPG level thresholds
 - Give the code needed to be used
 
-**Percentage of AI-generated code:** [Approximately X%]
-
 **Human Contributions:**
 - Modification of code
 - Idea for demo
@@ -222,20 +238,14 @@ If you used AI tools during development, document them here for transparency:
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- [Fathima Rasheed ]: [Sensor integration (ultrasonic + LEDs), WiFi setup, hardware connections, core system logic implementation.]
+- [Alba Asha]: [ESP32 programming, web interface development, testing and debugging, circuit assembly support, documentation writing, and final project integration..]
 
 ---
 
 ## License
 
-This project is licensed under the [LICENSE_NAME] License - see the [LICENSE](LICENSE) file for details.
-
-**Common License Options:**
-- MIT License (Permissive, widely used)
-- Apache 2.0 (Permissive with patent grant)
-- GPL v3 (Copyleft, requires derivative works to be open source)
+This project is licensed under the MIT LICENSE - see the LICENSE file for details
 
 ---
 
